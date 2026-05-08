@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米斯特早午餐 POS 系統</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">☀️</span>
+                <div class="logo-text">
+                    <h1>米斯特</h1>
+                    <p>Breakfast & Lunch</p>
+                </div>
+            </div>
+            <nav class="categories" id="category-list">
+                <!-- Categories will be injected here -->
+            </nav>
+            <div class="sidebar-footer">
+                <p>中正店 POS v1.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="搜尋餐點...">
+                </div>
+                <div class="current-category">
+                    <h2 id="active-category-name">所有餐點</h2>
+                </div>
+            </header>
+
+            <section class="menu-grid" id="menu-grid">
+                <!-- Menu items will be injected here -->
+            </section>
+        </main>
+
+        <!-- Right Panel: Order Summary -->
+        <section class="order-panel">
+            <div class="order-header">
+                <h3>當前訂單</h3>
+                <button class="clear-btn" id="clear-order">清空</button>
+            </div>
+            
+            <div class="order-items" id="order-items">
+                <!-- Cart items will be injected here -->
+                <div class="empty-cart">
+                    <p>尚未點餐</p>
+                </div>
+            </div>
+
+            <div class="order-footer">
+                <div class="summary-line">
+                    <span>小計</span>
+                    <span id="subtotal">NT$ 0</span>
+                </div>
+                <div class="summary-line total">
+                    <span>總計</span>
+                    <span id="total-price">NT$ 0</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn" disabled>確認下單</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Item Customization (Optional/Simple) -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <h3 id="modal-title">餐點名稱</h3>
+            <div class="options-group" id="modal-options">
+                <!-- Options will be injected -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal()">取消</button>
+                <button class="btn-primary" id="confirm-add-btn">加入訂單</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
